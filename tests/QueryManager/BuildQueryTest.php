@@ -13,6 +13,7 @@ class BuildQueryTest extends TestCase
 {
     private PDO $mockPDO;
 
+
     public function setUp(): void
     {
         $mockPDO = Mockery::mock(PDO::class);
@@ -20,6 +21,7 @@ class BuildQueryTest extends TestCase
         $mockPDO->shouldReceive('quote')->with('2024-10-20T20:35:00+02:00')->andReturn("'2024-10-20T20:35:00+02:00'");
         $this->mockPDO = $mockPDO;
     }
+
 
     public function tearDown(): void
     {

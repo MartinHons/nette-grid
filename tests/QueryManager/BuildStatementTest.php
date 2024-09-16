@@ -13,6 +13,7 @@ class BuildStatementTest extends TestCase
 {
     private PDO $mockPDO;
 
+
     public function setUp(): void
     {
         $mockPDO = Mockery::mock(PDO::class);
@@ -20,10 +21,12 @@ class BuildStatementTest extends TestCase
         $this->mockPDO = $mockPDO;
     }
 
+
     public function tearDown(): void
     {
         Mockery::close();
     }
+
 
     public function testWrongQuery(): void
     {
@@ -33,10 +36,10 @@ class BuildStatementTest extends TestCase
         Assert::exception(fn() => new QueryManager($this->mockPDO, 'SELECT * FROM table JOIN table2 ON table2.id = table.id_table_1'), InvalidArgumentException::class);
     }
 
+
     public function testRightQuery(): void
     {
     }
-
 }
 
 (new BuildStatementTest)->run();

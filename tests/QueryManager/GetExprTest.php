@@ -13,6 +13,7 @@ class GetExprTest extends TestCase
 {
     private PDO $mockPDO;
 
+
     public function setUp(): void
     {
         $mockPDO = Mockery::mock(PDO::class);
@@ -20,6 +21,7 @@ class GetExprTest extends TestCase
         $mockPDO->shouldReceive('quote')->with('2024-10-20T20:35:00+02:00')->andReturn("'2024-10-20T20:35:00+02:00'");
         $this->mockPDO = $mockPDO;
     }
+
 
     public function tearDown(): void
     {
@@ -32,6 +34,7 @@ class GetExprTest extends TestCase
         $qm = new QueryManager($this->mockPDO, 'SELECT * FROM table');
         Assert::same('xyz', $qm->getExpr('xyz')->column);
     }
+
 
     public function testWithJoin(): void
     {
@@ -61,6 +64,7 @@ class GetExprTest extends TestCase
             InvalidArgumentException::class,
         );
     }
+
 
     public function testFunction(): void
     {

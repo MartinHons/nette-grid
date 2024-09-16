@@ -14,6 +14,7 @@ class GetCountDataTest extends TestCase
 {
     private PDO $pdo;
 
+
     public function setUp(): void
     {
         $this->pdo = new PDO('mysql:host=mariadb;dbname=test_db', 'root', 'root');
@@ -40,6 +41,7 @@ class GetCountDataTest extends TestCase
                 ('Kiichiro','Toyoda','1894-06-11');
         ");
     }
+
 
     public function tearDown(): void
     {
@@ -72,6 +74,8 @@ class GetCountDataTest extends TestCase
         $qm = new QueryManager($this->pdo, 'SELECT * FROM person WHERE birthdate > "1900-01-01"');
         Assert::same(['totalCount' => 4, 'filteredCount' => 2], $qm->getCountData(new Condition('first_name LIKE "Q%"'), new Condition));
     }
+
+
     /*
 
 
