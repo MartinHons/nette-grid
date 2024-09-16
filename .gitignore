@@ -1,11 +1,10 @@
 _sandbox
+_old
 .dockerignore
 node_modules
 vendor
+temp
 composer.lock
 package-lock.json
 TODO
 test
-src/Assets
-src/Components
-src/old

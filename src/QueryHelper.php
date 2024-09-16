@@ -10,13 +10,13 @@ use PhpMyAdmin\SqlParser\Components\Condition;
 class QueryHelper
 {
     /**
-    * @param array<Condition|null> $conditions
-    * @param 'AND'|'OR' $operator
-    */
+     * @param array<Condition|null> $conditions
+     * @param 'AND'|'OR' $operator
+     */
     static public function mergeConditions(array $conditions, string $operator = 'AND'): ?Condition
     {
         $operator = strtoupper($operator);
-        if (!in_array($operator, ['AND', 'OR'])) {
+        if (!in_array($operator, ['AND', 'OR'], true)) {
             throw new InvalidArgumentException('$operator must be either AND or OR');
         }
 
@@ -47,7 +47,8 @@ class QueryHelper
     /**
      * It sorts conditions in query by their potential speed.
      * @param array<string> $conditions
-    */
+     * @return array<string>
+     */
     static private function sortConditions(array $conditions): array
     {
         usort($conditions, function($condition): int {

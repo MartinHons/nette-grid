@@ -8,12 +8,9 @@ use PhpMyAdmin\SqlParser\Components\Expression;
 
 class Column
 {
-    private $filter;
-
-
     public function __construct(
         private Expression $expression,
-        private string $title,
+        //private string $title,
         //private Filter $filter
     )
     {

@@ -1,0 +1,11 @@
+includes:
+
+parameters:
+	level: 9
+	bootstrapFiles:
+		- vendor/autoload.php
+	paths:
+		- src
+	tmpDir: temp
+	treatPhpDocTypesAsCertain: false
+	reportUnmatchedIgnoredErrors: false
