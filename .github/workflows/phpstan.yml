@@ -1,0 +1,14 @@
+name: CI
+run-name: PHPstan
+on: [push]
+
+jobs:
+  check_phpstan:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - uses: php-actions/composer@v6
+    - uses: php-actions/phpstan@v3
+      with:
+        path: src/
+        configuration: phpstan.neon.dist

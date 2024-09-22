@@ -1,5 +1,5 @@
 name: CI
-run-name: Run CS and PHPstan
+run-name: Coding Standards
 on: [push]
 
 jobs:
@@ -10,13 +10,3 @@ jobs:
     - uses: actions/setup-node@v4
     - run: composer create-project nette/coding-standard temp/coding-standard
     - run: php temp/coding-standard/ecs src --preset php82
-
-  check_phpstan:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v4
-    - uses: php-actions/composer@v6
-    - uses: php-actions/phpstan@v3
-      with:
-        path: src/
-        configuration: phpstan.neon.dist

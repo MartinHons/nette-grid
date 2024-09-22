@@ -8,18 +8,17 @@ use PhpMyAdmin\SqlParser\Components\Expression;
 
 class Column
 {
-    public function __construct(
-        private Expression $expression,
-        //private string $title,
-        //private Filter $filter
-    )
-    {
+	public function __construct(
+		private Expression $expression,
+		//private string $title,
+		//private Filter $filter
+	) {
 
-    }
+	}
 
 
-    public function getExpression(): Expression
-    {
-        return $this->expression;
-    }
+	public function getExpression(): Expression
+	{
+		return $this->expression;
+	}
 }
