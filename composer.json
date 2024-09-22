@@ -20,7 +20,6 @@
         "nette/database": "^3.2",
         "nette/http": "^3.3",
         "nette/utils": "^4.0",
-        "avadim/fast-excel-writer": "^5.8",
         "phpmyadmin/sql-parser": "^5.10"
     },
     "require-dev": {
